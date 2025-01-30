@@ -1,0 +1,4 @@
+things to fix in siteweb jid :
+- logo de la page (entete) aisnsi que son nom 
+-scrolling images (margin left/ right bloqué)
+-responsiveness of the space between a propos de nous et scrolling image 

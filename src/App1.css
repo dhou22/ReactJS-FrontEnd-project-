@@ -1,0 +1,497 @@
+/* General Body Styles */
+body {
+  background-color: white;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+/* Ensure the Menubar stays centered */
+.custom-menubar {
+  background-color: rgb(255, 255, 255);
+  margin-top: 2rem;
+  border: #ffffff;
+  display: flex;
+  justify-content: space-between; /* Distribute space between elements */
+  align-items: center;
+  padding: 1rem 0rem; /* Optional: Adjust padding */
+  gap: 16rem; /* Adds space between the logo, menu items, and button */
+}
+
+
+/* Main container for the intro section */
+/* Main container for the intro section */
+.intro-container {
+  display: flex;
+  flex-direction: column; /* Stack the box and button vertically */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  padding: 1rem 0.5rem; /* Padding around the container */
+  min-height: 60vh; /* Minimum height of the section */
+  gap: 1.5rem; /* Space between the box and the button */
+  margin-top: -4rem;
+}
+
+/* Box containing the text */
+.intro-box {
+  background-color: #ffffff; /* White background for the box */
+  padding: 1rem; /* Padding inside the box */
+  border-radius: 0px; /* No rounded corners */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  max-width: 1200px; /* Maximum width for larger screens */
+  width: 90%; /* Flexible width for responsiveness */
+  text-align: center; /* Center-align content inside */
+  border: 3px solid #414040; /* Darker border for visibility */
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  cursor: pointer; /* Add pointer cursor for interactivity */
+  margin: 0 auto; /* Center the box within its parent container */
+ 
+}
+
+
+/* Box when hovered */
+.intro-box.hovered {
+  transform: translateY(-10px) scale(1.05); /* Move and scale the box */
+  background-color: #a2b6f8; /* Change background color */
+}
+
+/* Paragraph text inside the box */
+.intro-text {
+  font-size: 1.5rem; /* Font size remains the same */
+  font-weight: bold; /* Make the text bold */
+  color: #333; /* Default text color */
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  line-height: 1.6; /* Improved line height for readability */
+  margin: 0.5rem; /* Smaller margin from the edges */
+  text-align: center; /* Center-align the text horizontally */
+  white-space: normal; /* Ensure the text can wrap to multiple lines */
+  width: 100%; /* Ensure the text spans the box width */
+  padding: 0 1rem; /* Add horizontal padding for better spacing */
+  box-sizing: border-box; /* Include padding within width */
+  display: inline-block; /* Treat the text as an inline block for centering */
+  transition: color 0.3s ease-in-out; /* Smooth transition for text color */
+}
+
+
+/* Text when the box is hovered */
+.intro-text.text-hovered {
+  color: #140257; /* Change text color */
+}
+
+/* Join Us button */
+.join-us-button {
+  font-size: 1.2rem; /* Slightly larger button text */
+  padding: 0.75rem 3rem; /* Add spacing inside the button */
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  border-radius: 50px; /* Rounded button corners */
+  animation: pulse 1.5s infinite; /* Add a pulse animation */
+  background-color: #140257;
+  margin-bottom: -3rem;
+
+}
+
+/* Pulse animation for the button */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1); /* Slightly enlarge the button */
+  }
+}
+
+
+/* Logo styles */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+  
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+/* Styling for menu items and padding between items */
+.custom-menubar .p-menubar-list {
+  display: flex;
+  justify-content: center; /* Center the menu items horizontally */
+  flex-grow: 1; /* Allow items to fill the remaining space */
+  gap: 2rem; /* Adds space between the items */
+  text-align: center; /* Ensure proper text alignment */
+}
+
+/* Ensure the button is on the right */
+.custom-menubar .p-menubar-end {
+  display: flex;
+  justify-content: flex-end; /* Align button to the right */
+}
+
+/* Menu item styles */
+.custom-home-class,
+.custom-events-class,
+.custom-comite-class {
+  color: #171718; /* Default text color */
+  font-size: 20px;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  position: relative;
+  cursor: pointer;
+  transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;
+  background-color: white;
+}
+
+/* Underline effect on hover */
+.custom-home-class::after,
+.custom-events-class::after,
+.custom-comite-class::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px; /* Thickness of the underline */
+  background-color: #1b1b1b; /* Color of the underline */
+  transition: width 0.5s ease-in-out;
+}
+
+/* Hover effect for menu items */
+.custom-home-class:hover::after,
+.custom-home-class.active::after,
+.custom-events-class:hover::after,
+.custom-events-class.active::after,
+.custom-comite-class:hover::after,
+.custom-comite-class.active::after {
+  width: 100%;
+}
+
+/* Hero Section */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: -20rem;
+  text-align: center;
+}
+
+
+/* Scrolling Images Section */
+.image-scroll {
+  position: relative;
+  width: 100vw; /* Full width of the viewport */
+  overflow: hidden; /* Hide overflowing images */
+  height: 70vh; /* Adjust height as needed */
+  margin-left: -8rem;
+  
+
+}
+
+.scroll-wrapper {
+  display: flex;
+  animation: scrollImages 40s linear infinite; /* Reduced scrolling speed */
+}
+
+.scroll-image {
+  flex-shrink: 0; /* Prevent images from shrinking */
+  width: 120vh; /* Adjust image width */
+  height: 70vh;
+  margin-right: 1rem; /* Adjust image height */
+  object-fit: cover; /* Prevent image distortion */
+  transition: transform 0.3s ease-in-out; /* Smooth transition for hover and click effects */
+  cursor: pointer; /* Show pointer cursor on hover */
+  
+}
+
+.scroll-image:hover {
+  transform: scale(1.1); /* Slight zoom on hover */
+}
+
+.zoom-beat {
+  animation: zoomBeat 1s ease-in-out; /* Beat animation when clicked */
+}
+
+@keyframes scrollImages {
+  0% {
+    transform: translateX(0); /* Start at the initial position */
+  }
+  100% {
+    transform: translateX(-100%); /* Move left by the width of the wrapper */
+  }
+}
+
+@keyframes zoomBeat {
+  0%, 100% {
+    transform: scale(1); /* Normal size */
+  }
+  50% {
+    transform: scale(1.2); /* Slight zoom */
+  }
+}
+
+
+/* Hero section text styles */
+h1 {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 2.5rem;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+p {
+  color: #181717;
+  margin-top: 1rem;
+  font-size: 1.25rem;
+  max-width: 600px;
+  margin: 0 auto;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .scroll-image {
+    width: 30vw; /* Adjust image size for smaller screens */
+    height: 30vh; /* Adjust image height for smaller screens */
+  }
+  .custom-menubar {
+    padding: 0 1rem; /* Adjust padding for mobile */
+    gap: 1rem; /* Reduce gap for smaller screens */
+  }
+  h1 {
+    font-size: 2rem; /* Reduce text size for smaller screens */
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  p {
+    font-size: 1rem; /* Adjust paragraph text size */
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  .about-us-main-title {
+    font-size: 2rem;}
+}
+/* About Us Section Styles */
+/* About Us Section Styles */
+.about-us-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 2rem;
+  max-width: 1200px;
+  gap: 1.5rem; /* Space between rows */
+  padding: 2rem ;
+  margin-left: 0rem;
+  margin-right: 0rem;
+}
+
+/* Title Container Styles */
+.about-us-title-container {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.about-us-main-title {
+  font-size: 2.9rem;
+  font-weight: bold;
+  color: #131313;
+  margin: 0.8rem;
+  margin-left: 10rem;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.about-us-underline {
+  width: 250px;
+  height: 4px;
+  background-color: #2d2c2c;
+  margin: 0.2rem auto 0;
+  position: relative;
+  margin-left: 16rem;
+  border-radius: 2px;
+}
+
+/* Row Layout (Image + Section Side-by-Side) */
+.about-us-row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem; /* Space between image and text */
+  flex-wrap: wrap; /* Ensure responsiveness */
+}
+
+/* Image Styles */
+.about-us-image {
+  flex: 0 0 200px; /* Fixed width for images */
+  height: 26vh; /* Fixed height */
+  object-fit: cover;
+  animation: pulse 2s infinite; /* Pulse animation */
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Text Section Styles */
+.about-us-section {
+  flex: 1; /* Take remaining space for text */
+  padding: 1.2rem;
+  border-radius: 17px;
+  box-shadow: 7px 5px 8px rgba(0, 0, 0, 0.1);
+  background-color: #a2b6f8;
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+/* Text Styles */
+.about-us-title {
+  font-size: 1.7rem;
+  margin-bottom: 1rem;
+  color: #140257;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.about-us-title:hover {
+  color: #fbfcfd;
+  transform: scale(1.1);
+}
+
+.about-us-section p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #181717;
+}
+
+.about-us-section:hover {
+  transform: translateY(-5px); /* Lift slightly on hover */
+}
+
+
+/* General styling for the comite section */
+.comite-section {
+  background-color: white;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+/* Title Section */
+.comite-title-section {
+  margin-bottom: 2rem;
+}
+
+.comite-title {
+  font-size: 2.9rem;
+  font-weight: bold;
+  color: #131313;
+  margin: 0.8rem 0 0.5rem; /* Adjust the bottom margin to control space between title and underline */
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.comite-underline {
+  width: 190px;
+  height: 4px;
+  background-color: #2d2c2c;
+  margin: -0.5rem auto 0; /* Adjust the top margin to control space with the title */
+  border-radius: 2px;
+}
+
+/* Styling for the comite cards */
+.comite-card {
+  cursor: pointer;
+  text-align: center;
+  background-color: #ccccdb;
+  border-radius: 20px;
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 30%;
+  
+}
+
+.comite-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0px 4px 8px rgba(7, 7, 7, 0.15);
+}
+
+/* Title and description inside the card */
+.comite-card-title {
+  font-size: 1.3rem; /* Default size */
+  font-weight: bold;
+  color:#140257;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.comite-card-title.small {
+  font-size: 1rem; /* Smaller size for responsiveness */
+}
+
+.comite-card-title.large {
+  font-size: 1.4rem; /* Larger size for responsiveness */
+}
+
+
+.comite-card-description {
+  font-size: 1.2rem;
+  line-height: 1.4;
+  color: #413f3f;
+  margin: 0;
+}
+
+/* Flex container for the comite boxes */
+.comite-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+  .comite-boxes {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .comite-card {
+    width: 100%; /* Full width for mobile */
+  }
+
+  .comite-title {
+    font-size: 2.4rem; /* Slightly smaller for mobile */
+  }
+
+  .comite-underline {
+    width: 150px; /* Adjust underline width for mobile */
+  }
+
+  .comite-card-title {
+    font-size: 1rem; /* Smaller card title font size for mobile */
+  }
+}
